@@ -4,15 +4,8 @@ public class Greeter {
     String formality;
 
     public String greet() {
-        if (this.formality == "formal") {
-            return "Good evening, sir.";
-        } else if (this.formality == "casual") {
-            return "Sup bro?";
-        } else if (this.formality == "intimate") {
-            return "Hello Darling!";
-        } else {
-            return "Hello.";
-        }
+        GreeterStringFactory factory = new GreeterStringFactory();
+        return factory.create(formality).getGreeterString();
     }
 
     public void setFormality(String formality) {
